@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+}
+#map {
+    height: 100vh;
+    width: 100%;
+}
+
+table {
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.head {
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background-color: #000;
+}
+
+td {
+    padding: 5px;
+}
+
+tr {
+    border-bottom: 1px solid #000;
+}
