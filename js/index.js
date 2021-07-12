@@ -64,23 +64,6 @@ function initialiseMap() {
 
 function setLocations(map, locations) {
     locations = locations[0]
-    // Create an array of alphabetical characters used to label the markers.
-  const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  // Add some markers to the map.
-  // Note: The code uses the JavaScript Array.prototype.map() method to
-  // create an array of markers based on a given "locations" array.
-  // The map() method here has nothing to do with the Google Maps API.
-  const markers = locations.map((location, i) => {
-    return new google.maps.Marker({
-      position: location,
-      label: labels[i % labels.length],
-    });
-  });
-  // Add a marker clusterer to manage the markers.
-  new MarkerClusterer(map, markers, {
-    imagePath:
-      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
-  });
     var bounds = new google.maps.LatLngBounds();
     // Create nice, customised pop-up boxes, to appear when the marker is clicked on
     var infowindow = new google.maps.InfoWindow({
@@ -92,8 +75,7 @@ function setLocations(map, locations) {
 
     }
     map.fitBounds(bounds);
-    // Create an array of alphabetical characters used to label the markers.
-  
+    
 }
 
 function createMarker(map, location, infowindow) {
@@ -153,5 +135,4 @@ function createMarker(map, location, infowindow) {
         infowindow.open(map, marker);
     });
     return marker;
-    
 }
